@@ -1,6 +1,6 @@
 module Shadow (shadow) where
 
-{-| API to regiter and create custom element
+{-| API for creating ShadowRoot
 
 @docs shadow
 -}
@@ -10,13 +10,14 @@ import Native.Shadow
 
 
 {-|
-    import CustomElement exposing (create)
+    import Shadow exposing (shadow)
 
-    user : UserModel -> Html
-    user model = create "x-user" Nothing
-      [ span [] [text model.name]
-      , span [] [text model.email]
-      ]
+    card : Model -> Html
+    card model =
+      shadow (div [] [])
+        [ style [] [text ":host { color: red }"]
+        , text model.content
+        ]
 -}
 shadow : Html -> List Html -> Html
 shadow =
