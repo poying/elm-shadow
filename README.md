@@ -23,7 +23,7 @@ styleSource =
 
 view : Int -> Html
 view num =
-  (div [] [])
+  shadow (div [] [])
     [ span [] [text num]
     , style [] [text styleSource]
     ]
