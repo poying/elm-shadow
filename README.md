@@ -22,9 +22,9 @@ styleSource =
 
 
 view : Int -> Html
-view =
+view num =
   (div [] [])
-    [ span [] [text model]
+    [ span [] [text num]
     , style [] [text styleSource]
     ]
 ```
