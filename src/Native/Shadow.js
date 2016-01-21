@@ -28,6 +28,7 @@ Elm.Native.Shadow.make = function (localRuntime) {
   ShadowHost.prototype.update = function (previous, node) {
     var oldModel = wrapContents(previous.contents);
     var newModel = wrapContents(this.contents);
+    VirtualDom.updateAndReplace(node, previous.host, node.host);
     VirtualDom.updateAndReplace(node.shadowRoot.firstChild, oldModel, newModel);
     return node;
   };
